@@ -1,0 +1,14 @@
+let observ = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }else{
+            entry.target.classList.remove('show');
+        }
+    })
+})
+
+let hiddenElements = document.querySelectorAll('.sec');
+hiddenElements.forEach((el) => observ.observe(el))
+
